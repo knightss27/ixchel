@@ -49,7 +49,7 @@ class SSH:
             # Some fiddling to say that we are still attempty to connect
             # Should happen roughly every 30 minutes?
             global retry_counter # Poor use of global variables, quicker fix until new version
-            if retry_counter > 10:
+            if retry_counter > 300:
                 self.slack.send_message("Retrying connection to the telescope. Please wait...")
                 retry_counter = 0
             else:
